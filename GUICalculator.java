@@ -44,7 +44,6 @@ public class GUICalculator implements ActionListener {
     JButton buttonEqual = new JButton("=");
     JButton buttonAdd = new JButton("+");
     JButton buttonMul = new JButton("X");
-    JButton buttonPercentage = new JButton("%");
 
     // colors for UI
 
@@ -240,13 +239,6 @@ public class GUICalculator implements ActionListener {
         buttonEqual.setForeground(Color.black);
         frame.add(buttonEqual);
 
-        buttonPercentage.setBounds(10, 410, 60, 40);
-        buttonPercentage.setFont(new Font("Arial", Font.BOLD, 20));
-        buttonPercentage.setFocusable(false);
-        buttonPercentage.setBackground(pastel);
-        buttonPercentage.setForeground(Color.white);
-        frame.add(buttonPercentage);
-
         buttonZero.setBounds(80, 410, 60, 40);
         buttonZero.setFont(new Font("Arial", Font.BOLD, 20));
         buttonZero.setFocusable(false);
@@ -278,7 +270,6 @@ public class GUICalculator implements ActionListener {
         buttonSeven.addActionListener(this);
         buttonEight.addActionListener(this);
         buttonNine.addActionListener(this);
-        buttonPercentage.addActionListener(this);
         buttonZero.addActionListener(this);
         buttonAdd.addActionListener(this);
         buttonSub.addActionListener(this);
@@ -315,12 +306,6 @@ public class GUICalculator implements ActionListener {
             if (textField.getText().endsWith("")) {
                 label.setText("");
             }
-        } else if (source == buttonPercentage) {
-            String str = textField.getText();
-            num1 = Double.parseDouble(textField.getText());
-            double number = num1 / 100;
-            String string = Double.toString(number);
-            textField.setText(string);
         } else if (source == buttonZero) {
             if (textField.getText().equals("0")) {
                 return;
